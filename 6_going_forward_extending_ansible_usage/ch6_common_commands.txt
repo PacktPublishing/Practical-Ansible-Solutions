@@ -1,0 +1,20 @@
+# list ansible modules
+ansible-doc -l
+
+# query syntax and options for module
+ansible-doc --snippet shell
+
+# list local modules
+tree -d /lib/python2.7/site-packages/ansible/modules/
+
+# get info about a galaxy role
+ansible-galaxy info sadsfae.ansible-nagios
+
+# install a galaxy role
+ansible-galaxy install --roles-path . sadsfae.ansible-nagios
+
+# install from list of roles, by default go into ~/.ansible/roles/
+ansible-galaxy install -r requirements.yml
+
+# install from list of roles, put in current directory
+ansible-galaxy --roles-path . install -r requirements.yml

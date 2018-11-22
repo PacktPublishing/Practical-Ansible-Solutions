@@ -1,0 +1,22 @@
+Welcome to chapter 2 of practical ansible solutions:  one-off tasks and heavy lifting.
+
+
+ansible -u root -i hosts webservers -m ping
+
+ansible all -m ping
+
+ansible webservers -a "uptime"
+
+ansible webservers -m shell -a 'for item in $(ls ~); do file $item; done'
+
+ansible webservers -m yum -a "name=httpd state=latest"
+
+ansible webservers -m service -a "name=httpd state=started"
+
+ansible webservers -m script -a ./create_content.sh
+
+ansible webservers -m copy  -a 'src=index.html dest=/var/www/html/index.html'
+
+ansible webservers -m setup
+
+ansible webservers -m setup > facts.txts

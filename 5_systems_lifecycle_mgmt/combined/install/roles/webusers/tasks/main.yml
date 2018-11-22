@@ -1,0 +1,42 @@
+---
+#
+# add users and SSH keys
+
+  - name: Gathering user info
+    local_action: command whoami
+    register: youruser
+
+  - name: Setup a system user
+    user: name={{ops_user}}
+          shell=/sbin/nologin
+          generate_ssh_key=yes
+          ssh_key_bits=2048
+          ssh_key_file=.ssh/id_rsa
+
+  - name: Add your SSH publickey to authorized keys
+    authorized_key:
+      user={{ops_user}}
+      key="{{ lookup('file','/home/{{youruser.stdout}}/.ssh/id_rsa.pub')}}"
+      manage_dir=yes
+    ignore_errors: true
+
+  - name: Add other SSH public keys
+    authorized_key:
+      user={{ops_user}}
+      key="{{ lookup('file','authorized_keys')}}"
+
+  - name: Make sure we have a 'wheel' group
+    group:
+      name: wheel
+      state: present
+
+  - name: Allow 'wheel' group to have passwordless sudo
+    lineinfile:
+      dest: /etc/sudoers
+      state: present
+      regexp: '^%wheel'
+      line: '%wheel ALL=(ALL) NOPASSWD: ALL'
+      validate: 'visudo -cf %s'
+
+  - name: Add sudoers users to wheel group
+    user: name={{ops_user}} groups=wheel append=yes state=present

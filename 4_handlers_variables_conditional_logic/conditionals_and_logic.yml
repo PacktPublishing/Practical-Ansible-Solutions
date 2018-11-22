@@ -1,0 +1,16 @@
+---
+
+- hosts: webservers
+  gather_facts: True
+  remote_user: root
+  tasks:
+    - name: Check Operating System
+      fail:
+        msg="You're not running a supported operating system (CentOS or RHEL 7+)"
+      when:
+        - ansible_os_family != "RedHat"
+        - ansible_distribution_major_version|int < 7
+
+    - name: Print Operating System
+      debug:  
+        msg="You're running {{ansible_os_family}} {{ansible_distribution_major_version}} or equivalent"

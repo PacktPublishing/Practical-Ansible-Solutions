@@ -1,0 +1,8 @@
+---
+# from galaxy
+- src: sadsfae.ansible-elk
+- src: sadsfae.ansible-nagios
+
+# from GitHub
+- src: https://github.com/bennojoy/openldap_server
+

@@ -1,0 +1,41 @@
+---
+#
+# Install webserver, deploy static content
+
+- hosts: webservers
+  gather_facts: True
+  vars_files:
+    - all.yml
+  remote_user: root
+  handlers:
+    - name: restart apache
+      service: name=httpd state=restarted
+  tasks:
+
+  - name: Install Apache webserver or ensure latest version
+    yum: name={{ item }} state=latest
+    become: true
+    with_items:
+      - httpd
+      - mod_ssl
+    notify: restart apache
+
+  - name: Ensure HTTPD is running
+    service:
+      name=httpd
+      state=started
+    become: true
+
+  - name: Push new content to webserver
+    copy:
+      src=index.html
+      dest=/var/www/html/
+      owner=apache
+      group=apache
+    become: true
+
+  - name: Ensure HTTPD is running
+    service:
+      name=httpd
+      state=started
+    become: true

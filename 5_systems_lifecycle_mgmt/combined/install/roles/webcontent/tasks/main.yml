@@ -1,0 +1,19 @@
+---
+#
+# Deploy static content from Jinja template
+
+  - name: Capture the current date from the date command
+    command: "date"
+    register: todays_date
+
+  - name: Capture today's date for web content page
+    set_fact:
+      current_time: "{{todays_date.stdout}}"
+
+  - name: Push new content to webserver
+    template:
+      src=index.html.j2
+      dest=/var/www/html/index.html
+      owner=apache
+      group=apache
+    become: true

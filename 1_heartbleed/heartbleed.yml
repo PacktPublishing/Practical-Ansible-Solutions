@@ -1,0 +1,7 @@
+---
+- hosts: webservers
+  vars:
+  remote_user: root
+  tasks:
+  - name: copy heartbleed.py and run it locally
+    script: ./heartbleed-poc.py localhost 

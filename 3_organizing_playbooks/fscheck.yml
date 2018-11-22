@@ -1,0 +1,22 @@
+---
+
+- name: test for available disk space
+  gather_facts: True
+  hosts: all
+  tasks:
+    - name: test for available disk space
+      assert:
+        that: 
+          - not {{ item.mount == '/boot' and ( item.size_available < (item.size_total|float - ( item.size_total|float * 0.3 ) ) ) }}
+      with_items: '{{ ansible_mounts }}'
+      ignore_errors: yes
+      register: disk_free
+    
+    - name: free disk space
+      command: "/usr/bin/df /"
+      when: disk_free|failed
+      register: results
+
+    - name: Print results
+      debug: msg='{{ results.stdout }}'
+      when: disk_free|failed

@@ -1,0 +1,7 @@
+---
+- hosts: webservers
+  gather_facts: False
+  vars:
+  tasks:
+  - name: Run heartbleed.py against remote servers
+    local_action: command python ./heartbleed-poc.py {{ inventory_hostname }}

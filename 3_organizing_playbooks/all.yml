@@ -1,0 +1,8 @@
+---
+
+# Here we would place variables
+
+# customize screenrc
+#
+screen_tab1_name: htop
+screen_tab2_name: tab2

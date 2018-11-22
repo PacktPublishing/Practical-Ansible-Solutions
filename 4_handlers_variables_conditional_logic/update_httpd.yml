@@ -1,0 +1,17 @@
+---
+
+- hosts: webservers
+  gather_facts: True
+  remote_user: root
+  tasks:
+    - name: Ensure Apache is latest version
+      yum:
+        name: httpd
+        state: latest
+      become: true
+      notify: restart apache
+
+  handlers:
+    - name: restart apache
+      become: true
+      service: name=httpd state=restarted

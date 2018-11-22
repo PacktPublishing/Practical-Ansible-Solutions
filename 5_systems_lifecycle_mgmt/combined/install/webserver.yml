@@ -1,0 +1,14 @@
+---
+#
+# Ansible playbook to setup and maintain static webservers
+#
+
+- hosts: webservers
+  remote_user: root
+  roles:
+    - { role: webusers }
+    - { role: webpackages }
+    - { role: webcontent }
+  handlers:
+    - name: restart apache
+      service: name=httpd state=restarted

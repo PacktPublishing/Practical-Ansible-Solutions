@@ -1,0 +1,17 @@
+---
+#
+# Install webserver packages, ensure latest version
+
+  - name: Install Apache webserver or ensure latest version
+    yum: name={{ item }} state=latest
+    become: true
+    with_items:
+      - httpd
+      - mod_ssl
+    notify: restart apache
+
+  - name: Ensure HTTPD is running
+    service:
+      name=httpd
+      state=started
+    become: true
