@@ -22,24 +22,24 @@ To fully benefit from the coverage included in this course, you will need:<br/>
 IT systems administrators, developers, and technical staff interested in automating common tasks and objectives with Ansible will benefit most from this curriculum. Some novice computing experience and exposure to IT and systems administration concepts are recommended.
 ### Technical Requirements
 This course has the following software requirements:<br/>
-A UNIX-like Operating System (Linux, Mac OSX) or VM
-An editor like Vim, Atom, Sublime Text or similar
-Ansible installed on your machine or VM
-A UNIX-like terminal (xterm, xfce-terminal, iterm2)
-SSH and Python libraries installed on remote hosts you want to manage.
+- A UNIX-like Operating System (Linux, Mac OSX) or VM
+- An editor like Vim, Atom, Sublime Text or similar
+- Ansible installed on your machine or VM
+- A UNIX-like terminal (xterm, xfce-terminal, iterm2)
+- SSH and Python libraries installed on remote hosts you want to manage.
 
 
 This course has been tested on the following system configuration:
 
-Ansible command host (where you run Ansible)
-OS: Fedora Linux 28 and CentOS Linux 7
-Processor:Intel Core i5
-Memory:16GB
+- Ansible command host (where you run Ansible)
+- OS: Fedora Linux 28 and CentOS Linux 7
+- Processor:Intel Core i5
+- Memory:16GB
 
-Ansible remote hosts
-OS: CentOS Linux 7
-Processor: Virtual Machine / 2 x vCPU
-Memory:1GB
+Ansible remote hosts:
+- OS: CentOS Linux 7
+- Processor: Virtual Machine / 2 x vCPU
+- Memory:1GB
 
 
 ## Related Products
