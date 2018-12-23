@@ -1,27 +1,38 @@
 # Practical Ansible Solutions [Video]
 This is the code repository for [Practical Ansible Solutions [Video]](https://www.packtpub.com/networking-and-servers/practical-ansible-solutions-video?utm_source=github&utm_medium=repository&utm_campaign=9781788476904), published by [Packt](https://www.packtpub.com/?utm_source=github). It contains all the supporting project files necessary to work through the video course from start to finish.
+
 ## About the Video Course
-	If you are looking for a simple IT automation engine that automates and fulfills your IT needs, Ansible is for you! With its handling multiple powerful automation tasks and its adaptability to various environments and workflows, Ansible is the perfect solution for your automation needs. This is achieved by connecting to nodes and pushing out small programs known as Ansible modules. Later the desired state is achieved by writing programs to the resource model. Ansible has a very efficient architecture that helps you manage your system with ease, providing a wide range of services such as container management, application deployment, and automating cloud provisioning.
-Core concepts—such as setting up the inventory and playbooks for a finely tuned orchestration and then the deployment of the examples—are covered. Further, we'll take a look at conditionals and variables, thus organizing playbooks. We take a brief look at real-world examples and managing system life cycles. Then we cover container and cloud management and network automation along with a brief coverage of Tower and Galaxy.
-Finally, you will attain a deeper understanding of Ansible usage and design, and will be well on the way to the design and management of your automation.
+If you are looking for a simple IT automation framework that's easy to manage, grow into, extend and adapt then Ansible is for you! Ansible is an Open Source, Python-based configuration management solution that saves you time and resources when automating deployment and management of application and IT infrastructure so you can spend your time doing other things.
+
+In this video course, we'll focus on getting things done quickly, using real-world examples and a hands-on teaching style rather than focus too much on theory and conceptual ideas once the basics are covered so you can get the job done.
+
+Core concepts—such as setting up the inventory and playbooks, ad-hoc commands and quick and dirty heavy lifting will get you up and running quickly. We'll then dive into proper playbook organization and using handlers, variables, conditionals and logic for maximizing the efficiency of your automation workflow. We'll also dive into handling growth and multi-role playbooks and stack orchestration.
+
+As we move onward to victory we will dive into systems lifecycle management so you can handle users, software and packages, authentication, services and application/web content with ease as well as touch on Ansible Tower/AWX. We'll end the journey with consuming and using Ansible Galaxy so you can borrow, share and collaborate with the vibrant Ansible Open Source community and the plethora of community roles and playbooks available on the internet.
+
+At the end of this course, you will attain a deeper understanding of Ansible usage and design and be empowered to create your own playbooks, properly growing and scaling them to adapt to the ever-changing needs of your IT landscape.
 
 <H2>What You Will Learn</H2>
 <DIV class=book-info-will-learn-text>
 <UL>
-<LI>Scan and discover Windows environments to identify an attack surface. 
-<LI>Gather information that could be helpful in exploitation. 
-<LI>Penetrate Windows machines through various services. 
-<LI>Exploit well-known Windows vulnerabilities. 
-<LI>Create persistent access to an exploited machine and maintain a stable backdoor. 
-<LI>Collect valuable information from the exploited host. 
-<LI>Propagate to other machines using Pass-The-Hash techniques. </LI></UL></DIV>
+<LI>Get up and running with Ansible quickly. 
+<LI>Gain experience to hands-on, practical Ansible automation examples
+<LI>Learn about creating, organizing and growing your own playbooks
+<LI>Harness powerful conditional logic and templating to more easily automate your infrastructure
+<LI>Start small, and build your way towards multi-role/stack playbooks
+<LI>Manage your systems packages, users, application content and authentication with Ansible.
+<LI>Learn about using Ansible Tower/AWX and Ansible Galaxy</LI></UL></DIV>
 
 ## Instructions and Navigation
-### Assumed Knowledge
-To fully benefit from the coverage included in this course, you will need:<br/>
+### Intended Audience
 IT systems administrators, developers, and technical staff interested in automating common tasks and objectives with Ansible will benefit most from this curriculum. Some novice computing experience and exposure to IT and systems administration concepts are recommended.
+
+### Assumed Knowledge
+You should have a beginner understanding of using a Linux terminal and systems administration concepts.
+
 ### Technical Requirements
-This course has the following software requirements:<br/>
+This course has the following software requirements:
+
 - A UNIX-like Operating System (Linux, Mac OSX) or VM
 - An editor like Vim, Atom, Sublime Text or similar
 - Ansible installed on your machine or VM
